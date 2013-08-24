@@ -18,19 +18,22 @@
 
     git config --system
     
-/etc/gitconfig
+> /etc/gitconfig
+> eg. "C:\Program Files (x86)\Git\etc\gitconfig"
 
 ## Global
 
     git config --global
     
-~/.gitconfig    
+> ~/.gitconfig
+> eg. "C:\Users\Shaun\.gitconfig"
 
 ## Repository
 
     git config 
-    
-eg. "C:\Users\Shaun\Documents\GitHub\Spark-Vendord\.git\config"
+
+> .git\config    
+> eg. "C:\Users\Shaun\Documents\GitHub\Spark-Vendord\.git\config"
 
 # Config Basics
 
