@@ -4,6 +4,9 @@
 
 # Overview
 
+This cheatsheet covers setting up and starting to use Git with Windows 8 and GitHub.
+The idea is to be able to work through all the "tasks" in an hour, and to have the appendix as a reference.
+
 * Windows 8
 * [GitHub for Windows](http://windows.github.com/)
 * PowerShell
