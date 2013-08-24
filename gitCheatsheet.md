@@ -4,6 +4,7 @@
 * posh-git (POwerSHell-GIT)
 * Windows 8
 * GitHub
+* [Git - Book](http://www.git-scm.com/book)
 
 # Commit Messages
 
