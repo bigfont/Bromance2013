@@ -1,8 +1,13 @@
+# Tasks
+
+* Configure a commit message editor.
+
 # Overview
 
+* Windows 8
+* [GitHub for Windows](http://windows.github.com/)
 * PowerShell
 * posh-git (POwerSHell-GIT)
-* Windows 8
 * GitHub
 * [Git - Book](http://www.git-scm.com/book)
 
