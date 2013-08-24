@@ -1,6 +1,7 @@
 # Tasks
 
 * Configure a commit message editor.
+* Configure a commit message template.
 
 # Overview
 
