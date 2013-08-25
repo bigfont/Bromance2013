@@ -58,14 +58,17 @@ The idea is to be able to work through all the "tasks" in an hour, and to have t
 
 # View Diffs
 
+Show the diff between your working tree and the index.  
+Do this most often before staging.
+
     git diff 
-    
-Shows the diff between your working tree and the index. 
+
+Show the diff between the index and the last commit.  
+Do this most often before commiting.
 
     git diff --cached
     
-Shows the diff between the index and the last commit.
+Show the diff between your working tree and the last commit.  
+This might sometimes be worth doing before staging or committing.
 
     git diff HEAD
-    
-Shows the diff between your working tree and the last commit.
