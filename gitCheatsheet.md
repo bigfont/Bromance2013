@@ -2,6 +2,7 @@
 
 * Configure a commit message editor.
 * Configure a commit message template.
+* View diffs.
 
 # Overview
 
@@ -54,3 +55,17 @@ The idea is to be able to work through all the "tasks" in an hour, and to have t
     git config core.editor "'C:\Program Files\Windows NT\Accessories\wordpad.exe'"
     
 * If it doesn't work, try changing the quote order from "'path'" to '"path"'
+
+# View Diffs
+
+    git diff 
+    
+Shows the diff between your working tree and the index. 
+
+    git diff --cached
+    
+Shows the diff between the index and the last commit.
+
+    git diff HEAD
+    
+Shows the diff between your working tree and the last commit.
