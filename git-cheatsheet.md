@@ -183,6 +183,7 @@ __Clean Up__
 
     cd C:/
     remove-item -force -recurse practicegit
+    cls
     ls
 
 # Commit Messages
