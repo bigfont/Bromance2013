@@ -151,7 +151,7 @@ __Create a new file and start tracking it.__ The file is __staged__.
     new-item -type file -name readme.md
     git add readme.md
     
-__Remove a staged file.__ The file goes from __staged__ to __untracked__ and Git has removed it from the working tree.
+__Remove a staged file.__ The file goes from __staged__ to __untracked__ and Git deletes it from the working tree.
 
     git rm -f readme.md
     
