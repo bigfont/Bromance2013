@@ -87,53 +87,53 @@ __Staged__
 
 # Practice - Record changes to the repository
 
-__Open PowerShell and navigate to C:/.__ We are using PowerShell commandlets to create files and directories. You can use any tool, though, to create files and directories. For instance, you could use the command prompt or Windows Explorer isntead of using PowerShell.
+__Open PowerShell and navigate to C:/.__ 
 
      cd C:\
      
-__Create a new directory.__ These are PowerShell commandlets.
+__Create and enter a new directory.__ These are PowerShell commandlets not Git commands.
 
      new-item -type dir -name practicegit
      cd practiceGit
      
-__Create a git repository.__ This is a Git command. All git commands have the 'git someCommand' sytax. To run git commands you either need a shell (PowerShell, command, bash, etc) or a GUI (GitHub for Windows, SourceTree). For this walkthrough, we're using PowerShell with posh-git installed too. 
+__Create a git repository.__ This is a Git command.
 
     git init
     
-__List the contents of a directory including hidden files.__ There should be a .git file. This is your repository!
+__List the contents of a directory including hidden files.__
 
     ls -force
     
-__Delete a directory and all its children.__ To delete the repository, just delete the .git directory.
+__Delete a Git repository.__ Just delete the .git directory.
 
     remove-item -force -recurse .git
 
-__Delete an empty directory.__ Let's reset by also deleting the practiceGit directory. 
+__Delete an empty directory.__ Full reset.
 
     cd.. 
     remove-item practicegit
     
-__Repeat without delete.__ Create a directory, enter that directory, create a repository.
+__Repeat without delete.__ Create and enter a directory. Then, create a repository.
 
     new-item -type dir -name practicegit
     cd practiceGit
     git init
 
-__Check the status of your files.__ You're on the master branch, your last commit message was "Initial commit," and there is nothing to commit. 
+__Check the status of your files.__
 
     git status
     
-__Create a new file.__ The readme.md file is in *untracked* status.
+__Create a new file.__ The readme.md file is in __untracked__ status.
 
     new-item -type file -name readme.md
     git status
     
-__Start tracking a file.__ The file goes directly to *staged* status. It will be part of your next commit.
+__Start tracking a file.__ The file goes directly to __staged__ status. It will be part of your next commit.
 
     git add readme.md
     git status
     
-__Remove a staged file.__ This puts the file back in the *untracked* status, then deletes it from your working tree.
+__Remove a staged file.__ This puts the file back in the __untracked__ status, then deletes it from your working tree.
 
     git rm -f readme.md
     git status
@@ -142,8 +142,9 @@ __Repeat without delete.__ Create a new file and start tracking it.
 
     new-item -type file -name readme.md
     git add readme.md
+    git status
     
-__Stop tracking a staged file.__ The puts the file back in the *untracked* status. That's all.
+__Stop tracking a staged file.__ The puts the file back in the __untracked__ status. That's all.
 
     git rm --cached readme.md
     git status
@@ -153,13 +154,13 @@ __Delete an untracked file with PowerShell.__
     remove-item readme.md
     git status
     
-__Create a new file and start tracking it.__ The new file is in the *staged* status.
+__Create a new file and start tracking it.__ The new file is in the __staged__ status.
 
     new-item -type file -name readme.md
     git add readme.md
     git status
     
-__Delete a staged file with PowerShell.__ The readme.md file is is n the *modified* state. We need to tell Git that we removed the file on purpose. We can do this with either 'git rm [filename]' or 'git add -A'
+__Delete a staged file with PowerShell.__ The readme.md file is is n the __modified__ state. We need to tell Git that we removed the file on purpose. We can do this with either 'git rm [filename]' or 'git add -A'
 
     remove-item readme.md
     git status
