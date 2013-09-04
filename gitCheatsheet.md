@@ -67,8 +67,9 @@ Track and stage an untracked file OR stage a modified file.
     
     git add [filename]
     git add [directory]
-
-Untrack a file, commit (without a message), and remove the file from your working directory, all at once.
+    
+Remove files.     
+I.e. untrack a file, commit (without a message), and remove the file from your working directory, all at once.
 
 ... remove an untracked file.
 
@@ -91,6 +92,7 @@ Commit staged files.
     git commit -v
     
 ... add add a commit message inline. 
+
     git commit -m "Did x because y."
     
 ... automatically stage all tracked files.    
