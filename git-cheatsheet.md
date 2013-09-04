@@ -160,12 +160,12 @@ __Create a new file and start tracking it.__ The file is __staged__.
     new-item -type file -name readme.md
     git add readme.md
     
-__Delete a staged file.__ Git will complain about this.
+__Delete a staged file.__ The file goes from __staged__ to __modified__. PowerShell has deleted it.
 
     remove-item readme.md
     git status
     
-__Tell git that you've deleted a tracked file.__ Git will be happy now.
+__Tell git that you've deleted a tracked file.__ The file goes from __modified__ to __untracked__.
 
     git rm readme.md
     git status
