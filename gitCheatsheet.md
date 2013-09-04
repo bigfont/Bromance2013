@@ -1,31 +1,47 @@
 [Git Book]: http://git-scm.com/book
 [GitHub for Windows]: http://windows.github.com
+[posh-git]: http://dahlbyk.github.io/posh-git/
 [Commit Message Template]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+[GitHub]: https://github.com/
 
-# Git Tasks
+# Overview
 
-* Configure a commit message editor.
-* Configure a commit message template.
-* View diffs.
+* This covers setting up and starting to use Git.
+* It should be possible to work through all the exercises in an hour.
+* The appendix is meant as a reference.
+* Most of the content comes directly from the [Git Book]
 
-# Cheatsheet Overview
-
-This cheatsheet covers setting up and starting to use Git with Windows 8 and GitHub.
-The idea is to be able to work through all the "tasks" in an hour, and to have the appendix as a reference.
-Most of the content comes directly from the [Git Book]
+# Requirements
 
 * Windows 8
-* [GitHub for Windows]
 * PowerShell
-* posh-git (POwerSHell-GIT)
-* GitHub
-* [Git Book]
 
-# Fundamental Git Concepts
+# Contents
+
+* Basic Git concepts
+* Install Git for Windows and posh-git
+* Configure a commit message editor
+* Configure a commit message template
+* Record changes to the repository
+* View diffs
+* Setup a GitHub account
+* Work with the remote repository
+* Appendix of commands
+
+# Install GitHub for Windows and posh-git
+
+* [GitHub for Windows]
+* [posh-git] (POwerSHell-GIT)
+
+# Basic Git concepts
+
+## Everything is local (within reason)
+
+TODO Talk about how everything is local.
 
 ## Git Patches
 
-TODO Talk about patches here.
+TODO Talk about patches.
 
 ## Git File Locations
 
@@ -34,74 +50,141 @@ TODO Explain the file locations here.
 - Working directory
 - Snapshot
 - Staging Area aka Index
+- Repository
+- Remote
+- Upstream
 
 ## Git File Statuses
 
 __Untracked__
+- Git is not tracking changes in these files. 
+- Git will state "untracked files present" until you either add them or ignore them.
 - "Untracked files"
 - Create a new file in your working directory.
-- Remove a tracked file.
+- Remove a tracked file from the index.
     
 __Tracked__
-- Add an untracked file.
-- Tracked files can be unmodified, modified, or staged.
+- Git is tracking changes in these files.
+- Tracked files are always in at least one of three states: unmodified, modified, or staged.
+- Tracked files can be both modified and staged!
 
 __Unmodified__
-- Commit a staged file.
+- Git notices no file differences between your working directory and your repository.
+- "nothing to commit, working directory clean"
+- Stage all modified files then commit.
 
 __Modified__
+- Git notices that you have made changes to a file but have not yet staged those changes.
 - "Changes not staged for commit"
-- Edit an unmodified file (i.e. edit a file that is already tracked).
+- Edit an unmodified file.
+- Edit a staged file.
 
 __Staged__
+- Git will include these file changes in your next commit.
 - "Changes to be committed"
+- Add an untracked file (the file is immediately staged; it skips both unmodified and modified statuses)
 - Stage a modified file.
 
-# Recording Changes to the Repository
+# Record changes to the repository
+
+Open PowerShell and navigate to C:/  
+
+     cd C:\
+     
+Create a new directory.
+
+     New-Item -type dir -name practiceGit
+     cd practiceGit
+     
+Create a git repository.
+
+    git init
+    
+List the contents of a directory including hidden files.
+
+    ls -force
+    
+*Delete a git repository.*
+
+    remove-item -force -recurse .git
+
+*Delete a directory.*
+
+    cd.. 
+    remove-item practiceGit
+    
+Repeat without delete.
+
+    cd C:\
+    New-Item -type dir -name practiceGit
+    cd practiceGit
+    git init
 
 Check the status of your files. 
 
     git status
+    
+Create a new file. 
 
-Track and stage an untracked file OR stage a modified file.
+    New-Item -type file -name readme.md
+    ls
+    git status
     
-    git add [filename]
-    git add [directory]
-    
-Remove files.     
-I.e. untrack a file, commit (without a message), and remove the file from your working directory, all at once.
+Start tracking a file (this also stages the new file).
 
-... remove an untracked file.
+    git add readme.md
+    git status
+    
+*Remove a staged file.*
 
-    git rm [filename] 
+    git rm -f readme.md
+    ls
     
-... remove a staged file.    
+Repeat without delete.
 
-    git rm -f [filename] 
+    git status
+    New-Item -type file -name readme.md
+    git add readme.md
     
-... untrack a staged file.    
+Stop tracking a staged file. 
 
-    git rm --cached [filename] 
+    git rm --cached readme.md
+    git status
+    
+Delete a file.
 
-Commit staged files.
+    remove-item -name readme.md
+    git status
     
-    git commit 
-    
-... add the diffs to the commit message editor.    
-    
-    git commit -v
-    
-... add add a commit message inline. 
+Create a new file and start tracking it. 
 
-    git commit -m "Did x because y."
+    New-Item -type file -name readme.md
+    git add readme.md
+    git status
     
-... automatically stage all tracked files.    
-    
-    git commit -a
-    
-Rename a file.
+Commit staged changes. 
 
-    git mv file_from file_to
+    git commit -m "Added a readme file, because this will help users."
+    
+Remove an unmodified file. 
+
+    git rm readme.md
+    git st
+    git commit -m "Removed readme.md, because it was annoying to users."
+    
+Create a new file.
+
+    new-item -type file -name readme.md
+    ls
+    git st
+    
+Remove a staged file.    
+
+    git add -A
+    git st
+    git rm readme.md -f
+    git st
+    ls
     
 ## Exercise with posh-git
 
@@ -189,4 +272,43 @@ This might sometimes be worth doing before staging or committing.
 
     git diff HEAD
 
+Track and stage an untracked file OR stage a modified file.
+    
+    git add [filename]
+    git add [directory]
+    
+Remove files.     
+I.e. untrack a file and remove it from your working directory, all at once.
+
+... remove an unmodified file.
+
+    git rm [filename] 
+    
+... remove a staged file.    
+
+    git rm -f [filename] 
+    
+... untrack a staged file.    
+
+    git rm --cached [filename] 
+
+Commit staged files.
+    
+    git commit 
+    
+... add the diffs to the commit message editor.    
+    
+    git commit -v
+    
+... add add a commit message inline. 
+
+    git commit -m "Did x because y."
+    
+... automatically stage all tracked files.    
+    
+    git commit -a
+    
+Rename a file.
+
+    git mv file_from file_to
 
