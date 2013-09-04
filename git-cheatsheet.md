@@ -132,7 +132,7 @@ __Create a new file.__ The file is __untracked__.
     new-item -type file -name readme.md
     git status
     
-__Start tracking a file.__ The file goes from __untracked__ to __staged__.
+__Start tracking a file.__ The file goes from __untracked__ to __staged__ aka "Changes to be committed."
 
     git add readme.md
     git status
