@@ -127,17 +127,17 @@ __Check the status of your files.__
 
     git status
     
-__Create a new file.__ The readme.md file is in __untracked__ status.
+__Create a new file.__ The readme.md file is in __untracked__.
 
     new-item -type file -name readme.md
     git status
     
-__Start tracking a file.__ The file goes directly to __staged__ status. It will be part of your next commit.
+__Start tracking a file.__ The file goes directly to __staged__. It will be part of your next commit.
 
     git add readme.md
     git status
     
-__Remove a staged file.__ This puts the file back in the __untracked__ status, then deletes it from your working tree.
+__Remove a staged file.__ This puts the file back in the __untracked__, then deletes it from your working tree.
 
     git rm -f readme.md
     git status
@@ -148,7 +148,7 @@ __Repeat without delete.__ Create a new file and start tracking it.
     git add readme.md
     git status
     
-__Stop tracking a staged file.__ The puts the file back in the __untracked__ status. That's all.
+__Stop tracking a staged file.__ The puts the file back in the __untracked__. That's all.
 
     git rm --cached readme.md
     git status
@@ -158,13 +158,13 @@ __Delete an untracked file with PowerShell.__
     remove-item readme.md
     git status
     
-__Create a new file and start tracking it.__ The new file is in the __staged__ status.
+__Create a new file and start tracking it.__ The new file is in the __staged__.
 
     new-item -type file -name readme.md
     git add readme.md
     git status
     
-__Delete a staged file with PowerShell.__ The readme.md file is is n the __modified__ state. We need to tell Git that we removed the file on purpose. We can do this with either 'git rm [filename]' or 'git add -A'
+__Delete a staged file with PowerShell.__ The readme.md file is is n the __modified__. To tell git that we removed it, run 'git rm [filename]' or 'git add -A'.
 
     remove-item readme.md
     git status
