@@ -1,3 +1,5 @@
+[Git Book]: http://git-scm.com/book
+
 # Tasks
 
 * Configure a commit message editor.
@@ -8,6 +10,7 @@
 
 This cheatsheet covers setting up and starting to use Git with Windows 8 and GitHub.
 The idea is to be able to work through all the "tasks" in an hour, and to have the appendix as a reference.
+Most of the content comes directly from the [Git Book]
 
 * Windows 8
 * [GitHub for Windows](http://windows.github.com/)
