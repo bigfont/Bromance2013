@@ -1,4 +1,6 @@
 [Git Book]: http://git-scm.com/book
+[GitHub for Windows]: http://windows.github.com
+[Commit Message Template]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 
 # Tasks
 
@@ -13,18 +15,18 @@ The idea is to be able to work through all the "tasks" in an hour, and to have t
 Most of the content comes directly from the [Git Book]
 
 * Windows 8
-* [GitHub for Windows](http://windows.github.com/)
+* [GitHub for Windows]
 * PowerShell
 * posh-git (POwerSHell-GIT)
 * GitHub
-* [Git - Book](http://www.git-scm.com/book)
+* [Git Book]
 
 # Commit Messages
 
 ## Conventions
 
 * Use the imperative mood for the summary.
-* http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+* Checkout this [Commit Message Template]
 
 # Config Locations 
 
