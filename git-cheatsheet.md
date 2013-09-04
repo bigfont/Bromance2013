@@ -95,33 +95,35 @@ __Create and enter a new directory.__ These are PowerShell commandlets not Git c
 
     new-item -type dir -name practicegit
     cd practiceGit
-     
+    
+__Clear the PowerShell screen.__
+
+    cls
+
 __Create a git repository.__ This is a Git command.
 
     git init
     
-__List the contents of a directory including hidden files.__
+__List all children includes hidding items.__ The .git directory *is* the repository.
 
     ls -force
     
 __Delete a Git repository.__ Just delete the .git directory.
 
     remove-item -force -recurse .git
+    ls -force
 
-__Delete an empty directory.__ Full reset.
+__Delete an empty directory.__ This brings us back to square one.
 
     cd.. 
     remove-item practicegit
-    
-__Clear the PowerShell screen.__
-
-    cls
     
 __Create and enter a directory. Then, create a repository.__
 
     new-item -type dir -name practicegit
     cd practiceGit
     git init
+    ls -force
 
 __Check the status of your files.__
 
@@ -130,54 +132,71 @@ __Check the status of your files.__
 __Create a new file.__ The file is __untracked__.
 
     new-item -type file -name readme.md
+    ls -force
     git status
     
 __Start tracking a file.__ The file goes from __untracked__ to __staged__ aka "Changes to be committed."
 
     git add readme.md
+    ls -force
     git status
     
 __Stop tracking a staged file.__ The file goes from __staged__ to __untracked__.
 
     git rm --cached readme.md
+    ls -force
     git status
     
 __Delete an untracked file.__ PowerShell deletes it from the working tree.
 
     remove-item readme.md
+    ls -force
+    git status
     
 __Create a new file and start tracking it.__ The file is __staged__.
 
     new-item -type file -name readme.md
     git add readme.md
+    ls -force
+    git status
     
 __Remove a staged file.__ The file goes from __staged__ to __untracked__ and Git deletes it from the working tree.
 
     git rm -f readme.md
+    ls -force
+    git status
     
 __Create a new file and start tracking it.__ The file is __staged__.
 
     new-item -type file -name readme.md
     git add readme.md
+    ls -force
+    git status
     
 __Delete a staged file.__ The file goes from __staged__ to __modified__. PowerShell has deleted it.
 
     remove-item readme.md
+    ls -force
     git status
     
 __Tell git that you've deleted a tracked file.__ The file goes from __modified__ to __untracked__.
 
     git rm readme.md
+    ls -force
     git status
-    
+        
 __Create a new file and start tracking it.__ The file is __staged__.
 
     new-item -type file -name readme.md
     git add readme.md    
+    ls -force
+    git status
     
 __Commit staged changes.__ This goes from __staged__ to __unmodified__ and Git has put it in the repository.
 
     git commit -m "Added a readme file, because this will help users."
+    ls -force
+    git status
     
 __Clean Up__
 
