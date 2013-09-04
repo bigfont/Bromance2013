@@ -89,12 +89,12 @@ __Staged__
 
 __Open PowerShell and navigate to C:/.__ 
 
-     cd C:\
+    cd C:\
      
 __Create and enter a new directory.__ These are PowerShell commandlets not Git commands.
 
-     new-item -type dir -name practicegit
-     cd practiceGit
+    new-item -type dir -name practicegit
+    cd practiceGit
      
 __Create a git repository.__ This is a Git command.
 
