@@ -1,15 +1,15 @@
 [Git Book]: http://git-scm.com/book
 [GitHub for Windows]: http://windows.github.com
-[posh-git]: http://dahlbyk.github.io/posh-git/
+[posh-git]: http://dahlbyk.github.io/posh-git
 [Commit Message Template]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
-[GitHub]: https://github.com/
+[GitHub]: https://github.com
 
 # Overview
 
 * This covers setting up and starting to use Git.
 * It should be possible to work through all the exercises in an hour.
 * The appendix is meant as a reference.
-* Most of the content comes directly from the [Git Book]
+* Most of the content comes directly from the [Git Book].
 
 # Requirements
 
@@ -47,12 +47,12 @@ TODO Talk about patches.
 
 TODO Explain the file locations here.
 
-- Working directory
-- Snapshot
-- Staging Area aka Index
-- Repository
-- Remote
-- Upstream
+- working directory aka working tree
+- snapshot
+- staging Area aka Index
+- repository
+- remote
+- upstream
 
 ## Git File Statuses
 
@@ -85,119 +85,98 @@ __Staged__
 - Add an untracked file (the file is immediately staged; it skips both unmodified and modified statuses)
 - Stage a modified file.
 
-# Record changes to the repository
+# Practice - Record changes to the repository
 
-Open PowerShell and navigate to C:/  
+__Open PowerShell and navigate to C:/.__ We are using PowerShell commandlets to create files and directories. You can use any tool, though, to create files and directories. For instance, you could use the command prompt or Windows Explorer isntead of using PowerShell.
 
      cd C:\
      
-Create a new directory.
+__Create a new directory.__ These are PowerShell commandlets.
 
-     New-Item -type dir -name practiceGit
+     new-item -type dir -name practicegit
      cd practiceGit
      
-Create a git repository.
+__Create a git repository.__ This is a Git command. All git commands have the 'git someCommand' sytax. To run git commands you either need a shell (PowerShell, command, bash, etc) or a GUI (GitHub for Windows, SourceTree). For this walkthrough, we're using PowerShell with posh-git installed too. 
 
     git init
     
-List the contents of a directory including hidden files.
+__List the contents of a directory including hidden files.__ There should be a .git file. This is your repository!
 
     ls -force
     
-*Delete a git repository.*
+__Delete a directory and all its children.__ To delete the repository, just delete the .git directory.
 
     remove-item -force -recurse .git
 
-*Delete a directory.*
+__Delete an empty directory.__ Let's reset by also deleting the practiceGit directory. 
 
     cd.. 
-    remove-item practiceGit
+    remove-item practicegit
     
-Repeat without delete.
+__Repeat without delete.__ Create a directory, enter that directory, create a repository.
 
-    cd C:\
-    New-Item -type dir -name practiceGit
+    new-item -type dir -name practicegit
     cd practiceGit
     git init
 
-Check the status of your files. 
+__Check the status of your files.__ You're on the master branch, your last commit message was "Initial commit," and there is nothing to commit. 
 
     git status
     
-Create a new file. 
+__Create a new file.__ The readme.md file is in *untracked* status.
 
-    New-Item -type file -name readme.md
-    ls
+    new-item -type file -name readme.md
     git status
     
-Start tracking a file (this also stages the new file).
+__Start tracking a file.__ The file goes directly to *staged* status. It will be part of your next commit.
 
     git add readme.md
     git status
     
-*Remove a staged file.*
+__Remove a staged file.__ This puts the file back in the *untracked* status, then deletes it from your working tree.
 
     git rm -f readme.md
-    ls
-    
-Repeat without delete.
-
     git status
-    New-Item -type file -name readme.md
+    
+__Repeat without delete.__ Create a new file and start tracking it.
+
+    new-item -type file -name readme.md
     git add readme.md
     
-Stop tracking a staged file. 
+__Stop tracking a staged file.__ The puts the file back in the *untracked* status. That's all.
 
     git rm --cached readme.md
     git status
     
-Delete a file.
+__Delete an untracked file with PowerShell.__
 
-    remove-item -name readme.md
+    remove-item readme.md
     git status
     
-Create a new file and start tracking it. 
-
-    New-Item -type file -name readme.md
-    git add readme.md
-    git status
-    
-Commit staged changes. 
-
-    git commit -m "Added a readme file, because this will help users."
-    
-Remove an unmodified file. 
-
-    git rm readme.md
-    git st
-    git commit -m "Removed readme.md, because it was annoying to users."
-    
-Create a new file.
+__Create a new file and start tracking it.__ The new file is in the *staged* status.
 
     new-item -type file -name readme.md
-    ls
-    git st
-    
-Remove a staged file.    
-
-    git add -A
-    git st
-    git rm readme.md -f
-    git st
-    ls
-    
-## Exercise with posh-git
-
-    git status
-    New-Item -Type File -Name readme.md
-    dir
-    git status 
-    git rm readme.md 
     git add readme.md
     git status
-    it rm --cached readme.md
-    git rm asdf 
-    Remove-Item -Path readme.md
+    
+__Delete a staged file with PowerShell.__ The readme.md file is is n the *modified* state. We need to tell Git that we removed the file on purpose. We can do this with either 'git rm [filename]' or 'git add -A'
+
+    remove-item readme.md
+    git status
+    
+__Tell git that we removed a file.__ We're now back at our initial commit state.
+
+    git rm readme.md
+    git status
+    
+__Repeat without delete.__ Create a new file and start tracking it.
+
+    new-item -type file -name readme.md
+    git add readme.md  
+    
+__Commit staged changes.__ This adds the staged changes to the repository. 
+
+    git commit -m "Added a readme file, because this will help users."
 
 # Commit Messages
 
@@ -296,15 +275,15 @@ Commit staged files.
     
     git commit 
     
-... add the diffs to the commit message editor.    
+... add the diffs to the commit message editor.
     
     git commit -v
     
-... add add a commit message inline. 
+... add add a commit message inline.
 
     git commit -m "Did x because y."
     
-... automatically stage all tracked files.    
+... automatically stage all tracked files.
     
     git commit -a
     
