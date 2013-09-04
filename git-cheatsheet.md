@@ -132,7 +132,6 @@ __Check the status of your files.__
 __Create a new file.__ The file is __untracked__.
 
     new-item -type file -name readme.md
-    ls -force
     git status
     
 __Start tracking a file.__ The file goes from __untracked__ to __staged__ aka "Changes to be committed."
@@ -157,7 +156,6 @@ __Create a new file and start tracking it.__ The file is __staged__.
 
     new-item -type file -name readme.md
     git add readme.md
-    ls -force
     git status
     
 __Remove a staged file.__ The file goes from __staged__ to __untracked__ and Git deletes it from the working tree.
@@ -170,7 +168,6 @@ __Create a new file and start tracking it.__ The file is __staged__.
 
     new-item -type file -name readme.md
     git add readme.md
-    ls -force
     git status
     
 __Delete a staged file.__ The file goes from __staged__ to __modified__. PowerShell has deleted it.
@@ -189,7 +186,6 @@ __Create a new file and start tracking it.__ The file is __staged__.
 
     new-item -type file -name readme.md
     git add readme.md    
-    ls -force
     git status
     
 __Commit staged changes.__ This goes from __staged__ to __unmodified__ and Git has put it in the repository.
