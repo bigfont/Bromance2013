@@ -178,6 +178,12 @@ __Repeat without delete.__ Create a new file and start tracking it.
 __Commit staged changes.__ This adds the staged changes to the repository. 
 
     git commit -m "Added a readme file, because this will help users."
+    
+__Clean Up__
+
+    cd C:/
+    remove-item -force -recurse practicegit
+    ls
 
 # Commit Messages
 
