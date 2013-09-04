@@ -117,7 +117,7 @@ __Clear the PowerShell screen.__
 
     cls
     
-__Repeat without delete.__ Create and enter a directory. Then, create a repository.
+__Create and enter a directory. Then, create a repository.__
 
     new-item -type dir -name practicegit
     cd practiceGit
@@ -127,59 +127,55 @@ __Check the status of your files.__
 
     git status
     
-__Create a new file.__ The readme.md file is in __untracked__.
+__Create a new file.__ The file is __untracked__.
 
     new-item -type file -name readme.md
     git status
     
-__Start tracking a file.__ The file goes directly to __staged__. It will be part of your next commit.
+__Start tracking a file.__ The file goes from __untracked__ to __staged__.
 
     git add readme.md
     git status
     
-__Remove a staged file.__ This puts the file back in the __untracked__, then deletes it from your working tree.
-
-    git rm -f readme.md
-    git status
-    
-__Repeat without delete.__ Create a new file and start tracking it.
-
-    new-item -type file -name readme.md
-    git add readme.md
-    git status
-    
-__Stop tracking a staged file.__ The puts the file back in the __untracked__. That's all.
+__Stop tracking a staged file.__ The file goes from __staged__ to __untracked__.
 
     git rm --cached readme.md
     git status
     
-__Delete an untracked file with PowerShell.__
+__Delete an untracked file.__ PowerShell deletes it from the working tree.
 
     remove-item readme.md
-    git status
     
-__Create a new file and start tracking it.__ The new file is in the __staged__.
+__Create a new file and start tracking it.__ The file is __staged__.
 
     new-item -type file -name readme.md
     git add readme.md
-    git status
     
-__Delete a staged file with PowerShell.__ The readme.md file is is n the __modified__. To tell git that we removed it, run 'git rm [filename]' or 'git add -A'.
+__Remove a staged file.__ The file goes from __staged__ to __untracked__ and Git has removed it from the working tree.
+
+    git rm -f readme.md
+    
+__Create a new file and start tracking it.__ The file is __staged__.
+
+    new-item -type file -name readme.md
+    git add readme.md
+    
+__Delete a staged file.__ Git will complain about this.
 
     remove-item readme.md
     git status
     
-__Tell git that we removed a file.__ We're now back at our initial commit state.
+__Tell git that you've deleted a tracked file.__ Git will be happy now.
 
     git rm readme.md
     git status
     
-__Repeat without delete.__ Create a new file and start tracking it.
+__Create a new file and start tracking it.__ The file is __staged__.
 
     new-item -type file -name readme.md
-    git add readme.md  
+    git add readme.md    
     
-__Commit staged changes.__ This adds the staged changes to the repository. 
+__Commit staged changes.__ This goes from __staged__ to __unmodified__ and Git has put it in the repository.
 
     git commit -m "Added a readme file, because this will help users."
     
