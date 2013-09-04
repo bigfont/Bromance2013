@@ -27,13 +27,15 @@ Most of the content comes directly from the [Git Book]
 
 TODO Talk about patches here.
 
-## File Locations
+## Git File Locations
+
+TODO Explain the file locations here.
 
 - Working directory
 - Snapshot
 - Staging Area aka Index
 
-## File Status
+## File Statuses
 
 __Untracked__
 - "Untracked files"
@@ -42,6 +44,7 @@ __Untracked__
     
 __Tracked__
 - Add an untracked file.
+- Tracked files can be unmodified, modified, or staged.
 
 __Unmodified__
 - Commit a staged file.
@@ -59,6 +62,7 @@ __Staged__
 Check the status of your files. 
 
     git status
+    git diff // shows the patches
     
 Begin tracking a new file.
 Stage modified files.
@@ -66,11 +70,11 @@ Stage modified files.
     git add [filename] // tracks and stages an untracked file
     git add [directory]
 
-Untrack a file, commit, and remove the file from your working directory, all at once.
+Untrack a file, commit (without a message), and remove the file from your working directory, all at once.
 
-    git rm [filename]
-    git rm -f [filename]
-    git rm --cached [filename]
+    git rm [filename] // remove a untracked file
+    git rm -f [filename] // remove a staged file
+    git rm --cached [filename] // untrack a staged file
 
 Commit staged files.
     
@@ -82,6 +86,19 @@ Commit staged files.
 Rename a file
 
     git mv file_from file_to
+    
+## Exercise with posh-git
+
+    git status
+    New-Item -Type File -Name readme.md
+    dir
+    git status 
+    git rm readme.md 
+    git add readme.md
+    git status
+    it rm --cached readme.md
+    git rm asdf 
+    Remove-Item -Path readme.md
 
 # Commit Messages
 
