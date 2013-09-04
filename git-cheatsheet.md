@@ -137,10 +137,9 @@ __Create a new file.__ The file is __untracked__.
 __Start tracking a file.__ The file goes from __untracked__ to __staged__ aka "Changes to be committed."
 
     git add readme.md
-    ls -force
     git status
     
-__Stop tracking a staged file.__ The file goes from __staged__ to __untracked__.
+__Stop tracking a staged file.__ The file goes from __staged__ to __untracked__. It is *not* deleted.
 
     git rm --cached readme.md
     ls -force
@@ -170,16 +169,15 @@ __Create a new file and start tracking it.__ The file is __staged__.
     git add readme.md
     git status
     
-__Delete a staged file.__ The file goes from __staged__ to __modified__. PowerShell has deleted it.
+__Delete a staged file.__ The file goes from __staged__ to __modified__, because PowerShell has deleted it.
 
     remove-item readme.md
     ls -force
     git status
     
-__Tell git that you've deleted a tracked file.__ The file goes from __modified__ to __untracked__.
+__Tell git that you've deleted a tracked file.__ The deleted file goes from __modified__ to __untracked__.
 
     git rm readme.md
-    ls -force
     git status
         
 __Create a new file and start tracking it.__ The file is __staged__.
@@ -188,7 +186,7 @@ __Create a new file and start tracking it.__ The file is __staged__.
     git add readme.md    
     git status
     
-__Commit staged changes.__ This goes from __staged__ to __unmodified__ and Git has put it in the repository.
+__Commit staged changes.__ The file goes from __staged__ to __unmodified__ and Git has put it in the repository.
 
     git commit -m "Added a readme file, because this will help users."
     ls -force
