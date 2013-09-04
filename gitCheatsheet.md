@@ -2,13 +2,13 @@
 [GitHub for Windows]: http://windows.github.com
 [Commit Message Template]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 
-# Tasks
+# Git Tasks
 
 * Configure a commit message editor.
 * Configure a commit message template.
 * View diffs.
 
-# Overview
+# Cheatsheet Overview
 
 This cheatsheet covers setting up and starting to use Git with Windows 8 and GitHub.
 The idea is to be able to work through all the "tasks" in an hour, and to have the appendix as a reference.
@@ -21,9 +21,9 @@ Most of the content comes directly from the [Git Book]
 * GitHub
 * [Git Book]
 
-# Fundamental Concepts
+# Fundamental Git Concepts
 
-## Patches
+## Git Patches
 
 TODO Talk about patches here.
 
@@ -35,7 +35,7 @@ TODO Explain the file locations here.
 - Snapshot
 - Staging Area aka Index
 
-## File Statuses
+## Git File Statuses
 
 __Untracked__
 - "Untracked files"
@@ -62,28 +62,42 @@ __Staged__
 Check the status of your files. 
 
     git status
-    git diff // shows the patches
+
+Track and stage an untracked file OR stage a modified file.
     
-Begin tracking a new file.
-Stage modified files.
-    
-    git add [filename] // tracks and stages an untracked file
+    git add [filename]
     git add [directory]
 
 Untrack a file, commit (without a message), and remove the file from your working directory, all at once.
 
-    git rm [filename] // remove a untracked file
-    git rm -f [filename] // remove a staged file
-    git rm --cached [filename] // untrack a staged file
+... remove an untracked file.
+
+    git rm [filename] 
+    
+... remove a staged file.    
+
+    git rm -f [filename] 
+    
+... untrack a staged file.    
+
+    git rm --cached [filename] 
 
 Commit staged files.
     
     git commit 
-    git commit -v // add the diffs to the editor
-    git commit -m "Did x because y." // type your commit message inline
-    git commit -a // automatically stage all tracked files
     
-Rename a file
+... add the diffs to the commit message editor.    
+    
+    git commit -v
+    
+... add add a commit message inline. 
+    git commit -m "Did x because y."
+    
+... automatically stage all tracked files.    
+    
+    git commit -a
+    
+Rename a file.
 
     git mv file_from file_to
     
