@@ -113,6 +113,10 @@ __Delete an empty directory.__ Full reset.
     cd.. 
     remove-item practicegit
     
+__Clear the PowerShell screen.__
+
+    cls
+    
 __Repeat without delete.__ Create and enter a directory. Then, create a repository.
 
     new-item -type dir -name practicegit
