@@ -254,6 +254,73 @@ __Commit.__ The file is now __unmodified__.
 
     git commit -m "Add some content to the readme."
     
+__Check the history.__ Press 'q' to exit the pager.
+
+    git log
+    
+__Create a new file, start tracking it, and add it to the repository.__
+
+    new-item -type file -name foobar.txt
+    git add foobar.txt
+    git commit -m "Add a new file for git log practice."
+    
+__Make some changes to the file, stage and commit them.__
+
+    add-content foobar.txt "foo"
+    git commit -am "Add foo."
+    add-content foobar.txt "`nLet's make the history more interesting."
+    git commit -am "Add some filler text."
+    add-content foobar.txt "`nbar"
+    git commit -am "End the document with bar."
+    git log 
+    
+__View the last (n) commits.__
+
+    git log -4
+
+__View the log with diffs.__ Diffs are also knowns as patches.
+
+    git log -p -2
+    
+__View the log with stats.__
+
+    git log --stat -2
+    
+__View the log with prebuilt prettiness.__ Here they are in order of pithiness.
+
+...hash and message  
+
+    git log --pretty=oneline -1
+    
+...hash, message, and author  
+    
+    git log --pretty=short -1
+    
+...hash, message, author, and date
+
+    git log 
+    
+...hash, message, author, committer
+
+    git log --pretty=full -1
+    
+...hash, message, author, committer, authorDate, committerDate
+    
+    git log --pretty=fuller -1
+    
+__Customize the log output.__
+
+    git log --pretty=format:"%h ... %s"
+    
+__Include a graphical representation.__ This becomes useful with branching and merging.
+
+    git log --pretty=oneline --graph
+    
+__Show the hash and a list of modified files.__
+
+    git log --name-only
+    git log --name-only --pretty=format:"%H"
+    
 __Clean Up__
 
     cd C:/
