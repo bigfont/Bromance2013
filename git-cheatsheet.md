@@ -92,6 +92,7 @@ __The Whole Script without Explainations__
     cd C:
     new-item -type dir -name practicegit
     cd practiceGit
+    git init
     new-item -type file -name readme.md
     git add readme.md    
     git commit -m "Added a readme file, because this will help users."
