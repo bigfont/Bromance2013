@@ -1,4 +1,5 @@
 [Git Book]: http://git-scm.com/book
+[Git Book - 2.2]: http://www.git-scm.com/book/en/Git-Basics-Recording-Changes-to-the-Repository
 [GitHub for Windows]: http://windows.github.com
 [posh-git]: http://dahlbyk.github.io/posh-git
 [Commit Message Template]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
@@ -91,7 +92,9 @@ __Staged__
 - Add an untracked file (the file is immediately staged; it skips both unmodified and modified statuses)
 - Stage a modified file.
 
-# Practice - Record changes to the repository
+# Practice - Recording Changes to the Repository
+
+See also: [Git Book - 2.2]
 
 __The Whole Script without Explainations__
 
@@ -228,9 +231,26 @@ __Modify a staged file.__ The files goes from __staged__ to __staged and modifie
     get-content readme.md
     git status
     
-__View diffs or patches.__ 
+> Git diff gives more specific information that git status does. 
+> Status talks about files; diff talk about lines.
+    
+__View diffs between the working tree and the index and y.__ What have you changed but not yet staged?
 
-    TODO
+    git diff
+
+__View diffs between the index and the repository.__ What have you staged that you are about to commit? 
+
+    git diff --cached
+    git diff --staged
+    
+__Stage the changes.__ The file is now __staged__.
+
+    git add readme.md
+    git st
+    
+__Commit.__ The file is now __unmodified__.
+
+    git commit -m "Add some content to the readme."
     
 __Clean Up__
 
