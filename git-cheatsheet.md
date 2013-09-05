@@ -3,6 +3,12 @@
 [posh-git]: http://dahlbyk.github.io/posh-git
 [Commit Message Template]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 [GitHub]: https://github.com
+[PowerShell]: http://technet.microsoft.com/en-us/scriptcenter/dd742419.aspx
+[New-Item]: http://technet.microsoft.com/en-us/library/ee176914.aspx
+[Remove-Item]: http://technet.microsoft.com/en-us/library/ee176938.aspx
+[Add-Content]: http://technet.microsoft.com/en-us/library/ee156791.aspx
+[Get-Content]: http://technet.microsoft.com/en-us/library/ee176843.aspx
+
 
 # Overview
 
@@ -108,7 +114,6 @@ __Create and enter a new directory.__ These are PowerShell commandlets not Git c
     new-item -type dir -name practicegit
     cd practiceGit
     git init
-
     
 __Clear the PowerShell screen.__
 
