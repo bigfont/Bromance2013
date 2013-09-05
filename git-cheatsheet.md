@@ -10,7 +10,6 @@
 [Add-Content]: http://technet.microsoft.com/en-us/library/ee156791.aspx
 [Get-Content]: http://technet.microsoft.com/en-us/library/ee176843.aspx
 
-
 # Overview
 
 * This covers setting up and starting to use Git.
@@ -320,6 +319,14 @@ __Show the hash and a list of modified files.__
 
     git log --name-only
     git log --name-only --pretty=format:"%H"
+    
+__Filter the log output.__
+
+    git log --since=2.weeks
+    git log --author=shaunluttin@gmail.com
+    git log --grep="file"
+    git log readme.md
+    git log --pretty=oneline -p readme.md
     
 __Clean Up__
 
