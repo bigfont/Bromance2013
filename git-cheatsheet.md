@@ -13,9 +13,9 @@
 # Overview
 
 * This covers setting up and starting to use Git.
-* It should be possible to work through all the exercises in an hour.
-* The appendix is meant as a reference.
-* Most of the content comes directly from the [Git Book].
+* The exercises should take an hour to work through but days to absorb.
+* The appendix is a reference.
+* Almost all the content comes from the [Git Book].
 
 # Requirements
 
@@ -25,19 +25,17 @@
 # Contents
 
 * Basic Git concepts
-* Install Git for Windows and posh-git
+* Install Git for Windows with posh-git
 * Configure a commit message editor
 * Configure a commit message template
+* Configure your color scheme
+* Create a repository
+* Add an ignore file
 * Record changes to the repository
-* View diffs
+* View the history
 * Setup a GitHub account
 * Work with the remote repository
 * Appendix of commands
-
-# Install GitHub for Windows and posh-git
-
-* [GitHub for Windows]
-* [posh-git] (POwerSHell-GIT)
 
 # Basic Git concepts
 
@@ -91,7 +89,12 @@ __Staged__
 - Add an untracked file (the file is immediately staged; it skips both unmodified and modified statuses)
 - Stage a modified file.
 
-# Practice - Recording Changes to the Repository
+# Install GitHub for Windows and posh-git
+
+* [GitHub for Windows]
+* [posh-git] (POwerSHell-GIT)
+
+# Exercises - Recording Changes to the Repository
 
 See also: [Git Book - 2.2]
 
