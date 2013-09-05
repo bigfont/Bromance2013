@@ -87,6 +87,17 @@ __Staged__
 
 # Practice - Record changes to the repository
 
+__The Whole Script without Explainations__
+
+    cd C:
+    new-item -type dir -name practicegit
+    cd practiceGit
+    new-item -type file -name readme.md
+    git add readme.md    
+    git commit -m "Added a readme file, because this will help users."
+    cd C:
+    remove-item -force -recurse practicegit    
+
 __Open PowerShell and navigate to C:/.__ 
 
     cd C:\
@@ -95,6 +106,8 @@ __Create and enter a new directory.__ These are PowerShell commandlets not Git c
 
     new-item -type dir -name practicegit
     cd practiceGit
+    git init
+
     
 __Clear the PowerShell screen.__
 
