@@ -211,6 +211,27 @@ __Commit staged changes.__ The file goes from __staged__ to __unmodified__ and G
     ls -force
     git status
     
+__Append some data to a file.__ The file goes from __unmodified__ to __modified__ aka "Changes not staged for commit"
+
+    add-content readme.md "Dev Teach 2013"
+    get-content readme.md
+    git status
+    
+__Stage the changes.__ The file goes from __unmodified__ to __staged.__
+
+    git add readme.md
+    git st
+    
+__Modify a staged file.__ The files goes from __staged__ to __staged and modified__, because git tracks __diffs__.
+
+    add-content readme.md "`n`nStarting Git"
+    get-content readme.md
+    git status
+    
+__View diffs or patches.__ 
+
+    TODO
+    
 __Clean Up__
 
     cd C:/
