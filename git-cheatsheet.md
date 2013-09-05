@@ -96,7 +96,7 @@ __Staged__
 
 See also: [Git Book - 2.2]
 
-__The Whole Script without Explainations__
+__The Whole Script__ with neither explainations nor cleanup.
 
     cd C:
     new-item -type dir -name practicegit
@@ -105,8 +105,10 @@ __The Whole Script without Explainations__
     new-item -type file -name readme.md
     git add readme.md    
     git commit -m "Added a readme file, because this will help users."
-    cd C:
-    remove-item -force -recurse practicegit    
+    add-content readme.md "Dev Teach 2013"
+    git add readme.md
+    add-content readme.md "`nStarting Git"
+    git commit -m "Add some content to the readme."    
 
 __Open PowerShell and navigate to C:/.__ 
 
@@ -227,7 +229,7 @@ __Stage the changes.__ The file goes from __unmodified__ to __staged.__
     
 __Modify a staged file.__ The files goes from __staged__ to __staged and modified__, because git tracks __diffs__.
 
-    add-content readme.md "`n`nStarting Git"
+    add-content readme.md "`nStarting Git"
     get-content readme.md
     git status
     
