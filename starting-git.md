@@ -390,7 +390,23 @@ __Basic Glob Patterns__
     
 * If it doesn't work, try changing the quote order from "'path'" to '"path"'
 
-# View Diffs
+# Work with the remote repository
+
+Fetch and merge automatically from the remote.
+
+    pull
+    
+Fetch manually from the remote and examine the results before merging.
+    
+    fetch
+    git log HEAD..origin/master
+    git log -p HEAD..origin/master
+    git diff HEAD...origin/master
+    git merge origin/master
+
+# Appendix: List of Commands
+
+View Diffs
 
 - git diff shows more details than git status does. 
 
