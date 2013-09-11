@@ -391,6 +391,8 @@ __Basic Glob Patterns__
 
 ### WordPad!
 
+Be sure to save when exiting your commit editor.
+
     git config --system core.editor "'C:\Program Files\Windows NT\Accessories\wordpad.exe'"
     git config --global core.editor "'C:\Program Files\Windows NT\Accessories\wordpad.exe'"
     git config core.editor "'C:\Program Files\Windows NT\Accessories\wordpad.exe'"
