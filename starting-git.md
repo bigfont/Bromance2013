@@ -343,8 +343,13 @@ __Clean Up__
 ## Conventions
 
 * Use the imperative mood for the summary.
-* Checkout this [Commit Message Template]
+* Checkout this [Commit Message Template]  
 
+
+    git config --system --get commit.template 
+    git config --global --get commit.template
+    git config --get commit.template
+ 
 # Config Locations 
 
 ## System
@@ -386,7 +391,10 @@ __Basic Glob Patterns__
 
 ### WordPad!
 
+    git config --system core.editor "'C:\Program Files\Windows NT\Accessories\wordpad.exe'"
+    git config --global core.editor "'C:\Program Files\Windows NT\Accessories\wordpad.exe'"
     git config core.editor "'C:\Program Files\Windows NT\Accessories\wordpad.exe'"
+    git config --get core.editor
     
 * If it doesn't work, try changing the quote order from "'path'" to '"path"'
 
