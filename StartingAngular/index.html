@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>BigFont ~ AngularJS</title>
+
+</head>
+<body>
+
+    <div ng-app="myApp">
+
+        <a class="custom-button">Click me</a>
+
+        <div ng-controller="MainCtrl">
+
+            {{ text }}
+
+            <p>No filter: {{ greeting }}</p>
+
+            <p>Reverse: {{ greeting | reverse }}</p>
+
+            <input class="ng-pristine ng-valid" type="text" ng-model="lowerBound">
+
+            <ul>
+
+                <li ng-repeat="number in numbers | filter:greaterThanNum">
+                    {{ number }}
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div ng-controller="UserCtrl">
+
+            <p class="username">Welcome, {{ user.details.username }}</p>
+            <p class="id">User ID: {{ user.details.id }}</p>
+
+        </div>
+
+    </div>
+
+    <script src="Scripts/angular.min.js"></script>
+    <script type="text/javascript">
+
+        (function () {
+
+
+            var myApp = angular.module('myApp', []);
+
+            myApp.controller('MainCtrl', ['$scope', 'Math', 'Server', function ($scope, Math, Server) {
+
+                $scope.text = 'Hello, Angular fanatic.';
+
+                $scope.greeting = 'Todd Motto';
+
+                // use a filter in a controller
+                $scope.numbers = [10, 25, 35, 45, 60, 80, 100];
+
+                $scope.lowerBound = 42;
+
+                $scope.greaterThanNum = function (item) {
+                    return item > $scope.lowerBound;
+                };
+
+
+                // use a service
+                var a = 12;
+                var b = 24;
+
+                // outputs 288
+                var result = Math.multiply(a, b);
+                window.alert(result);
+
+                // use a factory
+                var jsonGet = 'http://myserver/getURL';
+                var jsonPost = 'http://myserver/postURL';
+                Server.get(jsonGet);
+                Server.post(jsonPost);
+
+            }]);
+
+            myApp.controller('UserCtrl', ['$scope', function ($scope) {
+
+
+                // Let's namespace the user details
+                // Also great for DOM visual aids too
+                $scope.user = {};
+                $scope.user.details = {
+                    "username": "Todd Motto",
+                    "id": "89101112"
+                };
+
+            }]);
+
+            // automatic hyphen splitting
+            myApp.directive('customButton', function () {
+                return {
+                    restrict: 'C',
+                    replace: true,
+                    transclude: true,
+                    templateUrl: 'templates/customButton.html',
+                    link: function (scope, element, attrs) {
+                        // DOM manipulation/events here!
+                    }
+                };
+            });
+
+            myApp.service('Math', function () {
+                this.multiply = function (x, y) {
+                    return x * y;
+                };
+            });
+
+            myApp.factory('Server', ['$http', function ($http) {
+                return {
+                    get: function (url) {
+                        return $http.get(url);
+                    },
+                    post: function (url) {
+                        return $http.post(url);
+                    },
+                };
+            }]);
+
+            myApp.filter('reverse', function () {
+
+                return function (input, uppercase) {
+                    var out = '';
+                    for (var i = 0; i < input.length; i++) {
+                        out = input.charAt(i) + out;
+                    }
+                    if (uppercase) {
+                        out = out.toUpperCase();
+                    }
+                    return out;
+                }
+
+            });
+
+        }());
+
+
+
+
+    </script>
+
+</body>
+</html>
