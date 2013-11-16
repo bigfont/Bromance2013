@@ -1,6 +1,13 @@
 /*global window, angular*/
 var cardApp = (function (window) {
 
+    /* 
+     Place the controller declarations within an immediately invoked functional expression (IIFE), 
+     to ensure that they are private (i.e. ensure they are not part of THE GLOBAL OBJECT,
+     to avoid having to repeat 'use strict' for each function, and
+     to improve performance (maybe).
+     */
+
     'use strict';
 
     function AppCtrl($scope) {

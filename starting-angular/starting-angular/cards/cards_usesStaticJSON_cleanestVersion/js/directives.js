@@ -1,6 +1,5 @@
 /*global cardApp*/
 /*jslint unparam: true */
-
 cardApp.directive('integer', function () {
 
     'use strict';
