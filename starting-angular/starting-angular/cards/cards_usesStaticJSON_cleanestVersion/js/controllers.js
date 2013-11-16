@@ -7,7 +7,7 @@ var cardApp = (function (window) {
         $scope.title = "AngularJS Tutorial";
     }
     AppCtrl.$inject = ['$scope'];
-    window.AppCtrl = AppCtrl;
+    window.AppCtrl = AppCtrl; // add AppCtrl to the THE GLOBAL OBJECT
 
     function ListCtrl($scope, $route, cardService) {
         $scope.$route = $route;
@@ -29,7 +29,6 @@ var cardApp = (function (window) {
         cardService.addCard($scope, $routeParams.numberID, $routeParams.suitID);
     }
     AddConfirmCtrl.$inject = ['$scope', '$routeParams', 'cardService'];
-
 
     function AddCtrl($scope, $location) {
         $scope.master = {};
