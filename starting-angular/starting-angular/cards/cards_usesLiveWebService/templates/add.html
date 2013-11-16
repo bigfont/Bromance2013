@@ -1,0 +1,20 @@
+<form name="form" class="css-form" novalidate>
+    Number:
+    <input type="text" ng-model="number" name="number" required integer/><br />
+    <span ng-show="form.number.$error.integer">Card numbers can only be A,a,2-10,j,J,q,Q,k,K!</span><br/>
+    Suit:
+    <input type="radio" ng-model="card.suit" value="Clubs" required/>Clubs
+    <input type="radio" ng-model="card.suit" value="Hearts" />Hearts
+    <input type="radio" ng-model="card.suit" value="Spades" />Spades
+    <input type="radio" ng-model="card.suit" value="Diamonds" />Diamonds
+    <br />
+    <input type="hidden" ng-model="card.suit" name="hiddenradiobuttoninput" required/>
+    <input type="checkbox" ng-model="card.agree" name="cardAgree" required />
+    I agree: <input ng-show="card.agree" type="text" ng-model="card.agreeSign"
+                    required /><br />
+    <div ng-show="!card.agree || !card.agreeSign">Please agree and sign.</div>
+
+    <button ng-click="reset()" ng-disabled="isUnchanged(card)">RESET</button>
+    <button ng-click="add(number,card)"
+            ng-disabled="form.$invalid || isUnchanged(card)">SAVE</button>
+</form>

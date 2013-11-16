@@ -1,0 +1,10 @@
+﻿{
+  "output": "Error",
+  "runOnSave": true,
+  "runOnBuild": true,
+  "cancelBuild": false,
+  "ignore": [],
+  "options": {
+    "predef": {}
+  }
+}
