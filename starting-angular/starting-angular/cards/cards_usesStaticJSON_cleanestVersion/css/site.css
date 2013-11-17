@@ -1,0 +1,13 @@
+﻿
+/*
+
+Original Bootstrap's CSS depends on empty href attributes to style cursors for several components (pagination, tabs etc.). 
+But in AngularJS adding empty href attributes to link tags will cause unwanted route changes. 
+This is why we need to remove empty href attributes from directive templates and as a result styling is not applied correctly.
+The remedy is simple, just add the following styling to your application:  
+
+See also http://angular-ui.github.io/bootstrap/#/getting_started
+
+*/
+
+.nav, .pagination, .carousel a { cursor: pointer; } 

@@ -73,6 +73,7 @@
     <Content Include="cards\cards_usesStaticJSON_cleanestVersion\js\angular-route.min.js" />
     <Content Include="cards\cards_usesStaticJSON_cleanestVersion\js\angular-sanitize.min.js" />
     <Content Include="cards\cards_usesStaticJSON_cleanestVersion\js\angular.min.js" />
+    <Content Include="cards\cards_usesStaticJSON_cleanestVersion\js\app.js" />
     <Content Include="cards\cards_usesStaticJSON_cleanestVersion\js\controllers.js" />
     <Content Include="cards\cards_usesStaticJSON_cleanestVersion\js\directives.js" />
     <Content Include="cards\cards_usesStaticJSON_cleanestVersion\js\services.js" />

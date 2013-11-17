@@ -11,58 +11,32 @@
 
     <article class="container">
 
-        <ul class="unstyled">
-            <li class="dropdown" ng-controller="DropdownCtrl">
-                <a class="dropdown-toggle btn">
-                    Source
-                </a>
-                <ul class="dropdown-menu">
-                    <li ng-repeat="choice in items">
-                        <a>{{choice.text}}</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-
         <section class="row">
             <div class="span12">
                 <div ng-controller="AppCtrl" ng-model="title">
                     <h1>{{title}}</h1>
-                    <a href="#home">Card List</a> | <a href="#add">Add Card</a>
-                    <div ng-view></div>
-                </div>
-            </div>
+                    <ul class="unstyled">
+                        <li class="dropdown" ng-controller="DropdownCtrl">
+                            <a class="dropdown-toggle btn">
+                                Downloads
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li ng-repeat="choice in items">
+                                    <a>{{choice.text}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
 
-        </section>
-        <section class="row">
-            <div class="span12">
+                    <div ng-controller="TabsDemoCtrl">
+                        <tabset>
+                            <tab ng-repeat="tab in tabs" heading="{{tab.title}}" select="changeView(tab.view)">
+                                <div ng-view></div>
 
-                <!-- TODO Remove or do something practical with the accordion. -->
-                <div ng-controller="AccordionDemoCtrl">
-                    <label class="checkbox">
-                        <input type="checkbox" ng-model="oneAtATime">
-                        Open only one at a time
-                    </label>
+                            </tab>
+                        </tabset>
+                    </div>
 
-                    <accordion close-others="oneAtATime">
-                        <accordion-group heading="Static Header">
-                            This content is straight in the template.
-                        </accordion-group>
-                        <accordion-group heading="{{group.title}}" ng-repeat="group in groups">
-                            {{group.content}}
-                        </accordion-group>
-                        <accordion-group heading="Dynamic Body Content">
-                            <p>The body of the accordion group grows to fit the contents</p>
-                            <button class="btn btn-small" ng-click="addItem()">Add Item</button>
-                            <div ng-repeat="item in items">{{item}}</div>
-                        </accordion-group>
-                        <accordion-group>
-                            <accordion-heading>
-                                I can have markup, too! <i class="icon-check"></i>
-                            </accordion-heading>
-                            This is just some content to illustrate fancy headings.
-                        </accordion-group>
-                    </accordion>
                 </div>
             </div>
         </section>
@@ -82,8 +56,9 @@
     <script src="js/angular-sanitize.min.js"></script>
     <script src="js/ui-bootstrap-tpls-0.6.0.js"></script>
     <script src="js/controllers.js"></script>
-    <script src="js/services.js"></script>
+    <script src="js/app.js"></script>
     <script src="js/directives.js"></script>
+    <script src="js/services.js"></script>
 
 </body>
 </html>
