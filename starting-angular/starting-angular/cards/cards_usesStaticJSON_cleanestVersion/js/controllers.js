@@ -45,16 +45,7 @@ var cardAppControllers = (function () {
         };
     }]);
 
-
-
-    cardAppControllers.controller('TestCtrl', ['$scope', '$location', function ($scope, $location) {
-        $scope.changeView = function (view) {
-            $location.path(view); // path not hash
-        };
-
-    }]);
-
-    cardAppControllers.controller('TabsDemoCtrl', ['$scope', '$location', function ($scope, $location) {
+    cardAppControllers.controller('TabsCtrl', ['$scope', '$location', function ($scope, $location) {
 
         $scope.tabs = [{
             title: "Card List",
