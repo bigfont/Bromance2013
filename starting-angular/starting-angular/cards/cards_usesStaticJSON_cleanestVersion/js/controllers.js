@@ -14,7 +14,6 @@ var cardApp = (function (window) {
         $scope.title = "AngularJS Tutorial";
     }
     AppCtrl.$inject = ['$scope'];
-    window.AppCtrl = AppCtrl; // add AppCtrl to the THE GLOBAL OBJECT
 
     function ListCtrl($scope, $route, cardService) {
         $scope.$route = $route;
@@ -52,7 +51,47 @@ var cardApp = (function (window) {
     }
     AddCtrl.$inject = ['$scope', '$location', '$route', '$routeParams', 'cardService'];
 
-    var cardApp = angular.module('cardApp', ['ngRoute', 'ngSanitize']).config(function ($routeProvider) {
+    function AccordionDemoCtrl($scope) {
+        $scope.oneAtATime = true;
+        $scope.groups = [{
+            title: "Dynamic Group Header - 1",
+            content: "Dynamic Group Body - 1"
+        }, {
+            title: "Dynamic Group Header - 2",
+            content: "Dynamic Group Body - 2"
+        }];
+
+        $scope.items = ['Item 1', 'Item 2', 'Item 3'];
+
+        $scope.addItem = function () {
+            var newItemNo = $scope.items.length + 1;
+            $scope.items.push('Item ' + newItemNo);
+        };
+    }
+
+    function DropdownCtrl($scope) {
+        $scope.items = [
+            {
+                text: "Download - updated 11/11 9:44AM",
+                href: "cards.zip"
+            },
+            {
+                text: "Web API Project for REST",
+                href: "webapi.zip"
+            }
+        ];
+    }
+
+    /*
+        add some controllers to the DOM
+        because they are in ng-controller markup
+    */
+    window.AppCtrl = AppCtrl;
+    window.AccordionDemoCtrl = AccordionDemoCtrl;
+    window.DropdownCtrl = DropdownCtrl;
+
+    // add the cardApp module
+    var cardApp = angular.module('cardApp', ['ngRoute', 'ngSanitize', 'ui.bootstrap']).config(function ($routeProvider) {
         $routeProvider.
             when("/home", {
                 templateUrl: 'views/list.html',

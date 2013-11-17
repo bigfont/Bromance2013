@@ -68,7 +68,7 @@
     <Content Include="cards\cards_usesLiveWebService\templates\confirm.html" />
     <Content Include="cards\cards_usesLiveWebService\templates\detail.html" />
     <Content Include="cards\cards_usesLiveWebService\templates\list.html" />
-    <Content Include="cards\cards_usesStaticJSON_cleanestVersion\css\bootstrap.css" />
+    <Content Include="cards\cards_usesStaticJSON_cleanestVersion\css\site.css" />
     <Content Include="cards\cards_usesStaticJSON_cleanestVersion\index.html" />
     <Content Include="cards\cards_usesStaticJSON_cleanestVersion\js\angular-route.min.js" />
     <Content Include="cards\cards_usesStaticJSON_cleanestVersion\js\angular-sanitize.min.js" />
@@ -77,6 +77,7 @@
     <Content Include="cards\cards_usesStaticJSON_cleanestVersion\js\directives.js" />
     <Content Include="cards\cards_usesStaticJSON_cleanestVersion\js\services.js" />
     <Content Include="cards\cards_usesStaticJSON_cleanestVersion\js\ui-bootstrap-tpls-0.6.0.js" />
+    <Content Include="cards\cards_usesStaticJSON_cleanestVersion\sandbox.html" />
     <Content Include="cards\cards_usesStaticJSON_cleanestVersion\views\add.html" />
     <Content Include="cards\cards_usesStaticJSON_cleanestVersion\views\confirm.html" />
     <Content Include="cards\cards_usesStaticJSON_cleanestVersion\views\detail.html" />
