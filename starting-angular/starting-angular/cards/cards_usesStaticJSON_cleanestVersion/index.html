@@ -42,11 +42,11 @@
 
     <div class="container">
 
-        <header class="row" ng-controller="AppCtrl" ng-model="title">
+        <header ng-controller="AppCtrl" ng-model="title">
             <h1>{{title}}</h1>
         </header>
 
-        <article class="row" ng-controller="TabsCtrl">
+        <article ng-controller="TabsCtrl">
             <tabset>
                 <tab ng-repeat="tab in tabs" heading="{{tab.title}}" select="changeView(tab.view)">
                     <section ng-view></section>
@@ -54,7 +54,7 @@
             </tabset>
         </article>
 
-        <footer class="row">
+        <footer >
 
             <div class="dropdown" ng-controller="DropdownCtrl">
                 <button class="dropdown-toggle btn btn-primary">
