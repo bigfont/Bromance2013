@@ -1,69 +1,38 @@
 ﻿<!doctype html>
-<html ng-app="plunker">
+<html ng-app="cardApp">
 <head>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.js"></script>
-    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.js"></script>    
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+
+
+    <script id="template/alert/alert.html" type="text/ng-template">
+        <div class='alert' ng-class='type && "alert-" + type'>
+            <button ng-show='closeable' type='button' class='close' ng-click='close()'>Close</button>
+            <div ng-transclude></div>
+        </div>
+    </script>
 
 </head>
 <body>
 
-    <div ng-controller="AccordionDemoCtrl">
-        <label class="checkbox">
-            <input type="checkbox" ng-model="oneAtATime">
-            Open only one at a time
-        </label>
-
-        <accordion close-others="oneAtATime">
-            <accordion-group heading="Static Header">
-                This content is straight in the template.
-            </accordion-group>
-            <accordion-group heading="{{group.title}}" ng-repeat="group in groups">
-                {{group.content}}
-            </accordion-group>
-            <accordion-group heading="Dynamic Body Content">
-                <p>The body of the accordion group grows to fit the contents</p>
-                <button class="btn btn-small" ng-click="addItem()">Add Item</button>
-                <div ng-repeat="item in items">{{item}}</div>
-            </accordion-group>
-            <accordion-group>
-                <accordion-heading>
-                    I can have markup, too! <i class="icon-check"></i>
-                </accordion-heading>
-                This is just some content to illustrate fancy headings.
-            </accordion-group>
-        </accordion>
+    <div ng-controller="AlertDemoCtrl">
+        <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+        <button class='btn' ng-click="addAlert()">Add Alert</button>
     </div>
 
-    <script type="text/javascript">
 
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/angular-sanitize.min.js"></script>
+    <script src="js/angular.min.js"></script>
 
-        angular.module('plunker', ['ui.bootstrap']);
-        function AccordionDemoCtrl($scope) {
-            $scope.oneAtATime = true;
+    <script src="js/ui-for-bootstrap-3/us-bootstrap-0.6.0.js"></script>
 
-            $scope.groups = [
-              {
-                  title: "Dynamic Group Header - 1",
-                  content: "Dynamic Group Body - 1"
-              },
-              {
-                  title: "Dynamic Group Header - 2",
-                  content: "Dynamic Group Body - 2"
-              }
-            ];
-
-            $scope.items = ['Item 1', 'Item 2', 'Item 3'];
-
-            $scope.addItem = function () {
-                var newItemNo = $scope.items.length + 1;
-                $scope.items.push('Item ' + newItemNo);
-            };
-        }
-
-
-    </script>
+    <!--site-->
+    <script src="js/controllers.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/services.js"></script>
 
 </body>
 </html>

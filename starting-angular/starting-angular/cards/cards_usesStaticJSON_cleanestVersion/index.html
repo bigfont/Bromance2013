@@ -1,59 +1,102 @@
 <!doctype html>
 <html ng-app="cardApp">
 <head>
+
     <title>Starting Angular - Cards</title>
 
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <!--css-->
+    <link href="css/bootstrap-3.x.css" rel="stylesheet" />
     <link href="css/site.css" rel="stylesheet" />
+
+    <!--angularJS templates-->
+    <script id="template/tabs/tab.html" type="text/ng-template">
+
+        <li ng-class="{active: active, disabled: disabled}">
+            <a ng-click="select()" tab-heading-transclude>{{heading}}</a>
+        </li>
+
+    </script>
+    <script id="template/tabs/tabset.html" type="text/ng-template">
+
+        <div class="tabbable" ng-class="{'tabs-right': direction == 'right', 'tabs-left': direction == 'left', 'tabs-below': direction == 'below'}">
+            <div tabset-titles="tabsAbove"></div>
+            <div class="tab-content">
+                <div class="tab-pane"
+                     ng-repeat="tab in tabs"
+                     ng-class="{active: tab.active}"
+                     tab-content-transclude="tab">
+                </div>
+            </div>
+            <div tabset-titles="!tabsAbove"></div>
+        </div>
+
+    </script>
+    <script id="template/tabs/tabset-titles.html" type="text/ng-template">
+
+        <ul class="nav {{type && 'nav-' + type}}" ng-class="{'nav-stacked': vertical, 'nav-justified': justified}"></ul>
+
+    </script>
 
 </head>
 <body>
 
-    <article class="container">
+    <div class="container">
 
-        <section class="row">
-            <div class="span12">
-                <div ng-controller="AppCtrl" ng-model="title">
-                    <h1>{{title}}</h1>
-                    <ul class="unstyled">
-                        <li class="dropdown" ng-controller="DropdownCtrl">
-                            <a class="dropdown-toggle btn">
-                                Downloads
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li ng-repeat="choice in items">
-                                    <a>{{choice.text}}</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+        <header class="row" ng-controller="AppCtrl" ng-model="title">
+            <h1>{{title}}</h1>
+        </header>
 
-                    <div ng-controller="TabsCtrl">
-                        <tabset>
-                            <tab ng-repeat="tab in tabs" heading="{{tab.title}}" select="changeView(tab.view)">
-                                <div ng-view></div>
-                            </tab>
-                        </tabset>
-                    </div>
+        <article class="row" ng-controller="TabsCtrl">
+            <tabset>
+                <tab ng-repeat="tab in tabs" heading="{{tab.title}}" select="changeView(tab.view)">
+                    <section ng-view></section>
+                </tab>
+            </tabset>
+        </article>
 
-                </div>
+        <footer class="row">
+
+            <div class="dropdown" ng-controller="DropdownCtrl">
+                <button class="dropdown-toggle btn btn-primary">
+                    Downloads
+                </button>
+                <ul class="dropdown-menu">
+                    <li ng-repeat="choice in items">
+                        <a>{{choice.text}}</a>
+                    </li>
+                </ul>
             </div>
-        </section>
 
-    </article>
+        </footer>
+
+    </div>
+
 
 
 
 
     <!-- js at end to improve performance -->
-    <!--
+    <!--angular-->
     <script src="http://code.angularjs.org/angular-1.2.0-8336b3a/angular.min.js"></script>
     <script src="http://code.angularjs.org/angular-1.2.0-8336b3a/angular-route.min.js"></script>
-    <script src="http://code.angularjs.org/angular-1.2.0-8336b3a/angular-sanitize.min.js"></script>-->
-    <script src="js/angular.min.js"></script>
-    <script src="js/angular-route.min.js"></script>
-    <script src="js/angular-sanitize.min.js"></script>
-    <script src="js/ui-bootstrap-tpls-0.6.0.js"></script>
+    <script src="http://code.angularjs.org/angular-1.2.0-8336b3a/angular-sanitize.min.js"></script>
+
+    <!--cdn fallback-->
+    <script>
+        if (!window.angular) {
+            var tag;
+            tag = '<script src="{path}"><\/script>';
+            document.write(tag.replace('{path}', 'js/angular.min.js'));
+            document.write(tag.replace('{path}', 'js/angular-route.min.js'));
+            document.write(tag.replace('{path}', 'js/angular-sanitize.min.js'));
+        }
+    </script>
+
+    <!--angular bootstrap-->
+    <script src="js/ui-bootstrap-3.x/tabs.js"></script>
+    <script src="js/ui-bootstrap-3.x/dropdownToggle.js"></script>
+
+    <!--site-->
     <script src="js/controllers.js"></script>
     <script src="js/app.js"></script>
     <script src="js/directives.js"></script>

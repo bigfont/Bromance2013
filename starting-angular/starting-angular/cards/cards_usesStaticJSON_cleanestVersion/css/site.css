@@ -11,3 +11,27 @@ See also http://angular-ui.github.io/bootstrap/#/getting_started
 */
 
 .nav, .pagination, .carousel a { cursor: pointer; } 
+
+
+/*
+
+Layout
+
+*/
+
+header, article, footer {
+
+    background:#EDEDED;
+    margin-top:20px;
+    padding:20px;
+    border-radius:5px;
+
+}
+
+section {
+    
+    background:white;
+    padding:10px;
+    border:thin solid #DDDDDD;
+
+}

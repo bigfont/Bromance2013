@@ -1,5 +1,11 @@
 ﻿/*global angular */
-var cardApp = angular.module('cardApp', ['ngRoute', 'ngSanitize', 'cardAppControllers', 'ui.bootstrap']).config(function ($routeProvider) {
+var cardApp = angular.module('cardApp',
+    [
+        'ngRoute',
+        'ngSanitize',
+        'cardAppControllers',
+        'ui.bootstrap.tabs',
+        'ui.bootstrap.dropdownToggle']).config(function ($routeProvider) {
 
     'use strict';
 
