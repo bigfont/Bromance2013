@@ -8,7 +8,7 @@
     <link href="css/bootstrap-3.x.css" rel="stylesheet" />
     <link href="css/site.css" rel="stylesheet" />
 
-    <!--angularJS templates-->
+    <!--angular bootstrap 3.0 templates-->
     <script id="template/tabs/tab.html" type="text/ng-template">
 
         <li ng-class="{active: active, disabled: disabled}">
@@ -43,15 +43,19 @@
     <div class="container">
 
         <header ng-controller="AppCtrl" ng-model="title">
+
             <h1>{{title}}</h1>
+
         </header>
 
         <article ng-controller="TabsCtrl">
+
             <tabset>
                 <tab ng-repeat="tab in tabs" heading="{{tab.title}}" select="changeView(tab.view)">
                     <section ng-view></section>
                 </tab>
             </tabset>
+
         </article>
 
         <footer >
@@ -70,10 +74,6 @@
         </footer>
 
     </div>
-
-
-
-
 
     <!-- js at end to improve performance -->
     <!--angular-->
