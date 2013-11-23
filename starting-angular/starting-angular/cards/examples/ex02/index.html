@@ -12,6 +12,18 @@
     <div ng-controller="AppCtrl" ng-model="title">
         <!-- The expression, '{{title}}' gets data from the model. -->
         <h1>{{title}}</h1>
+
+        <table>
+            <tr><th>Number</th><th>Suit</th></tr>
+            <!-- Populate the template with each object in the cards model. -->
+            <tr ng-repeat="card in cards">
+                <td>{{card.number}}</td>
+                <td>{{card.suit}}</td>
+            </tr>
+        </table>
+        <br />
+
+
     </div>
 </body>
 </html>

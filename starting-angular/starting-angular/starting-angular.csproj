@@ -85,6 +85,14 @@
     <Content Include="cards\cards_usesStaticJSON_cleanestVersion\views\confirm.html" />
     <Content Include="cards\cards_usesStaticJSON_cleanestVersion\views\detail.html" />
     <Content Include="cards\cards_usesStaticJSON_cleanestVersion\views\list.html" />
+    <Content Include="cards\examples\ex01\index.html" />
+    <Content Include="cards\examples\ex01\js\controllers.js" />
+    <Content Include="cards\examples\ex02\index.html" />
+    <Content Include="cards\examples\ex02\js\controllers.js" />
+    <Content Include="cards\examples\ex03\index.html" />
+    <Content Include="cards\examples\ex03\js\controllers.js" />
+    <Content Include="cards\examples\ex04\index.html" />
+    <Content Include="cards\examples\ex04\js\controllers.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -99,7 +107,18 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="cards\examples\ex05\" />
+    <Folder Include="cards\examples\ex06\" />
+    <Folder Include="cards\examples\ex07\" />
+    <Folder Include="cards\examples\ex08\" />
+    <Folder Include="cards\examples\ex09\" />
+    <Folder Include="cards\examples\ex10\" />
+    <Folder Include="cards\examples\ex11\" />
+    <Folder Include="cards\examples\ex12\" />
+    <Folder Include="cards\examples\ex13\" />
+    <Folder Include="cards\examples\ex14\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
