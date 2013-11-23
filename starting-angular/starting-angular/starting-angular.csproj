@@ -108,7 +108,7 @@
     <Content Include="cards\examples\ex08\js\app.js" />
     <Content Include="cards\examples\ex08\js\controllers.js" />
     <Content Include="cards\examples\ex08\js\service.js" />
-    <Content Include="cards\examples\ex08\views\confirm.html" />
+    <Content Include="cards\examples\ex09\views\confirm.html" />
     <Content Include="cards\examples\ex08\views\detail.html" />
     <Content Include="cards\examples\ex08\views\list.html" />
     <Content Include="cards\examples\ex09\index.html" />
