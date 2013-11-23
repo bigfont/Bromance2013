@@ -1,0 +1,16 @@
+﻿<!doctype html>
+<html ng-app>
+<head>
+    <title>Starting Angular</title>
+</head>
+<body>
+    <form name="myForm" ng-controller="Ctrl">
+        City: <input name="city" ng-model="userAddress"><br />
+        <button ng-click="update(userAddress)">Update</button>
+    </form>
+
+    <!--script at end for performance-->
+    <script src="http://code.angularjs.org/angular-1.2.0-8336b3a/angular.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

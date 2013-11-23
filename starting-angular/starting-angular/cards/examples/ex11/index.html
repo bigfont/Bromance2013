@@ -1,0 +1,20 @@
+﻿<!doctype html>
+<html ng-app>
+<head>
+    <script src="http://code.angularjs.org/angular-1.2.0-8336b3a/angular.min.js"></script>
+</head>
+<body>
+    <form name="myForm">
+        Mail hard copy?
+        <input type="checkbox" ng-model="checked"><br />
+        Select Mail Service:
+        <select id="transferTo" ng-disabled="!checked" ng-model="mailService">
+            <option>UPS</option>
+            <option>Fedex</option>
+        </select>
+        <br />
+        <!-- Only show if checkbox is checked and mailService is selected -->
+        <div ng-show="checked && mailService">Thank you for choosing {{mailService}}.</div>
+    </form>
+</body>
+</html>
