@@ -1,0 +1,26 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>Starting Angular</title>
+</head>
+<!-- Notice here that ng-app references our 'cardApp' module -->
+<body ng-app='cardApp'>
+    <!-- Reference the application level controller for the title model. -->
+    <div ng-controller="AppCtrl" ng-model="title">
+        <h1>{{title}}</h1>
+        <!-- The #home link selects routing for '/home'.  Routing for
+             #add does not exist yet so the default for '/home' will be chosen.-->
+        <a href="#home">Card List</a> | <a href="#add">Add Card</a>
+        <hr>
+        <!-- Our one page app works by switching views here. -->
+        <div ng-view></div><br />
+        </hr>
+    </div>
+    <!--angular-->
+    <script src="http://code.angularjs.org/angular-1.2.0-8336b3a/angular.min.js"></script>
+    <script src="http://code.angularjs.org/angular-1.2.0-8336b3a/angular-route.min.js"></script>
+    <!--site-->
+    <script src="js/controllers.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>Starting Angular</title>
+    <script src="http://code.angularjs.org/angular-1.2.0-8336b3a/angular.min.js"></script>
+    <script src="js/controllers.js"></script>
+</head>
+<!-- The ng-app directive triggers load and setup of AngularJS after the DOM is loaded.
+     It sets the tag as the root of the AngularJS app.  -->
+<body ng-app>
+    <!-- Identify the controller and model to be used. -->
+    <div ng-controller="AppCtrl" ng-model="title">
+        <!-- The expression, '{{title}}' gets data from the model. -->
+        <h1>{{title}}</h1>
+
+        Sort by:
+        <select ng-model="orderProp">
+            <option value="suit">Suit</option>
+            <option value="numOrd">Number</option>
+        </select>
+
+        Number search: <input type="text" ng-model="searchTerm.card.number">
+        Suit search: <input type="text" ng-model="searchTerm.card.suit"><br />
+
+        <table>
+            <tr><th>Number</th><th>Suit</th></tr>
+            <!-- Populate the template with each object in the cards model. -->
+            <tr ng-repeat="card in cards | orderBy:orderProp |  filter:searchTerm.card ">
+                <td>{{card.number}}</td>
+                <td>{{card.suit}}</td>
+            </tr>
+        </table>
+        <br />
+
+
+    </div>
+</body>
+</html>
