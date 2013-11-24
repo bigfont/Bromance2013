@@ -57,17 +57,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="cards\cards_usesLiveWebService\index.html" />
-    <Content Include="cards\cards_usesLiveWebService\js\angular-route.min.js" />
-    <Content Include="cards\cards_usesLiveWebService\js\angular-sanitize.min.js" />
-    <Content Include="cards\cards_usesLiveWebService\js\angular.min.js" />
-    <Content Include="cards\cards_usesLiveWebService\js\script.js" />
-    <Content Include="cards\cards_usesLiveWebService\js\service.js" />
-    <Content Include="cards\cards_usesLiveWebService\sql\cards.sql" />
-    <Content Include="cards\cards_usesLiveWebService\templates\add.html" />
-    <Content Include="cards\cards_usesLiveWebService\templates\confirm.html" />
-    <Content Include="cards\cards_usesLiveWebService\templates\detail.html" />
-    <Content Include="cards\cards_usesLiveWebService\templates\list.html" />
     <Content Include="cards\cards_usesStaticJSON_cleanestVersion\css\bootstrap-3.css" />
     <Content Include="cards\cards_usesStaticJSON_cleanestVersion\css\site.css" />
     <Content Include="cards\cards_usesStaticJSON_cleanestVersion\index.html" />
