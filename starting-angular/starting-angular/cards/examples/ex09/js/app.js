@@ -1,4 +1,6 @@
-﻿// Declare module that references our controllers.
+﻿/*global angular */
+
+// Declare module that references our controllers.
 var cardApp = angular.module('cardApp', ['ngRoute', 'cardAppControllers']).config(function ($routeProvider) {
 
     /*
@@ -16,9 +18,11 @@ var cardApp = angular.module('cardApp', ['ngRoute', 'cardAppControllers']).confi
         templateUrl: 'views/list.html',
         controller: 'ListCtrl'
     }).when('/home/number/:numberID/suit/:suitID', {
-        templateUrl: 'views/detail.html', controller: 'DetailCtrl'
+        templateUrl: 'views/detail.html',
+        controller: 'DetailCtrl'
     }).when('/delete/number/:numberID/suit/:suitID', {
-        templateUrl: 'views/confirm.html', controller: 'DeleteCtrl'
+        templateUrl: 'views/confirm.html',
+        controller: 'DeleteCtrl'
     }).
 
 

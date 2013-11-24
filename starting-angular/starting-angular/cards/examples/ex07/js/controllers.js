@@ -1,4 +1,6 @@
-﻿var cardAppControllers = (function () {
+﻿/*global angular */
+
+var cardAppControllers = (function () {
     'use strict';
     var cardAppControllers = angular.module('cardAppControllers', []);
 
@@ -8,11 +10,10 @@
         $scope.title = "AngularJS Tutorial";
     }]);
     // Inject the scope and new cardService reference into the controller.
-    cardAppControllers.controller('ListCtrl', ['$scope', 'cardService',
-                                  function ($scope, cardService) {
-                                      // Define the cards model.					  
-                                      cardService.getCards($scope);
-                                  }]);
+    cardAppControllers.controller('ListCtrl', ['$scope', 'cardService', function ($scope, cardService) {
+        // Define the cards model.
+        cardService.getCards($scope);
+    }]);
 
     return cardAppControllers;
 }());

@@ -1,7 +1,12 @@
-﻿function Ctrl($scope) {
+﻿/*global window */
+
+function Ctrl($scope) {
+
+    'use strict';
+
     $scope.userAddress = 'Vancouver';
 
     $scope.update = function (input) {
-        alert("Updated address to: " + input);
+        window.alert("Updated address to: " + input);
     };
 }

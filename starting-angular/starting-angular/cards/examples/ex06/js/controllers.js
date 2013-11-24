@@ -1,4 +1,6 @@
-﻿var cardAppControllers = (function () {
+﻿/*global angular */
+
+var cardAppControllers = (function () {
     'use strict';
     var cardAppControllers = angular.module('cardAppControllers', []);
 
@@ -10,7 +12,7 @@
     // Declare the controller that populates 'list.html' with data and inject the scope.
     cardAppControllers.controller('ListCtrl', ['$scope',
         function ($scope) {
-            // Define the cards model.					  
+            // Define the cards model.
             $scope.cards = [
                 { "number": "2", "suit": "Hearts", "numOrd": 2 },
                 { "number": "10", "suit": "Spades", "numOrd": 10 },

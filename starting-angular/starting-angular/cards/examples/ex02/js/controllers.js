@@ -1,4 +1,7 @@
 ﻿function AppCtrl($scope) {
+
+    'use strict';
+
     $scope.title = "AngularJS Hello World!";
 
     // Define a new model called 'cards' with JSON.

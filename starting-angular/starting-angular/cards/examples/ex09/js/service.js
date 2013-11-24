@@ -1,4 +1,6 @@
-﻿cardApp.factory("cardService", function ($http) {
+﻿/*global cardApp */
+
+cardApp.factory("cardService", function () {
     'use strict';
     return {
         getCards: function ($scope) {

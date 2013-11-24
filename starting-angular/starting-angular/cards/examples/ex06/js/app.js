@@ -1,4 +1,6 @@
-﻿// Declare module that references our controllers.
+﻿/*global angular */
+
+// Declare module that references our controllers.
 var cardApp = angular.module('cardApp', ['ngRoute', 'cardAppControllers']).config(function ($routeProvider) {
 
     /*

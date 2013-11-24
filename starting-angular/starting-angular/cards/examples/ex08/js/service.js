@@ -1,4 +1,6 @@
-﻿cardApp.factory("cardService", function ($http) {
+﻿/*global angular, cardApp */
+
+cardApp.factory("cardService", function () {
     'use strict';
     return {
         getCards: function ($scope) {
@@ -24,5 +26,5 @@
                 }); */
             $scope.card = { "number": cardNum, "suit": cardSuit };
         }
-    }
+    };
 });

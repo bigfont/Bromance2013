@@ -1,4 +1,6 @@
-﻿var cardAppControllers = (function () {
+﻿/*global angular */
+
+var cardAppControllers = (function () {
     'use strict';
     var cardAppControllers = angular.module('cardAppControllers', []);
 
@@ -8,11 +10,10 @@
         $scope.title = "AngularJS Tutorial";
     }]);
     // Inject the scope and new cardService reference into the controller.
-    cardAppControllers.controller('ListCtrl', ['$scope', 'cardService',
-                                  function ($scope, cardService) {
-                                      // Define the cards model.					  
-                                      cardService.getCards($scope);
-                                  }]);
+    cardAppControllers.controller('ListCtrl', ['$scope', 'cardService', function ($scope, cardService) {
+        // Define the cards model.
+        cardService.getCards($scope);
+    }]);
 
     // Inject scope, $routeParams, and cardService  
     cardAppControllers.controller('DetailCtrl', ['$scope', '$routeParams', 'cardService',
@@ -32,8 +33,8 @@
         }]);
 
     // The $location service is injected to enable the redirect.
-    cardAppControllers.controller('AddCtrl', ['$scope', '$location', 'cardService',
-        function AddCtrl($scope, $location, cardService) {
+    cardAppControllers.controller('AddCtrl', ['$scope', '$location',
+        function AddCtrl($scope, $location) {
             // Create an empty object.
             $scope.master = {};
 
