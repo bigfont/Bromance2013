@@ -120,6 +120,8 @@
     <Content Include="cards\examples\ex10\index.html" />
     <Content Include="cards\examples\ex10\js\script.js" />
     <Content Include="cards\examples\ex11\index.html" />
+    <Content Include="cards\examples\ex12\index.html" />
+    <Content Include="cards\examples\ex12\js\controllers.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -135,7 +137,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="cards\examples\ex12\" />
     <Folder Include="cards\examples\ex13\" />
     <Folder Include="cards\examples\ex14\" />
   </ItemGroup>

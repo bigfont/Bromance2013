@@ -1,0 +1,37 @@
+﻿<!doctype html>
+<html ng-app>
+<head>
+    <title>Starting Angular</title>
+</head>
+<body>
+    <form name="myForm" ng-controller="Ctrl">
+        <!-- Input with validation -->
+        City: <input name="city" ng-model="userAddress"
+                     ng-minlength="3"
+                     ng-maxlength="10"
+                     ng-pattern="/^[A-z]+$/"
+                     required><br />
+        <!-- Show validation error messages -->
+        <span ng-show="myForm.city.$error.required">Required!</span>
+        <span ng-show="myForm.city.$error.minlength">Minimum 3 characters required!</span>
+        <span ng-show="myForm.city.$error.maxlength">More than 10 characters not permitted!</span>
+        <span ng-show="myForm.city.$error.pattern">Only alphabetical characters are permitted!</span>
+        <span ng-show="myForm.city.$valid">Valid!</span>
+        <span ng-show="!myForm.city.$valid">Not valid!</span><br>
+
+        <!-- Show input and form validation status -->
+        userAddress = {{userAddress}}<br>
+        myForm.city.$valid = {{myForm.city.$valid}}<br>
+        myForm.city.$error = {{myForm.city.$error}}<br>
+        myForm.$valid = {{myForm.$valid}}<br>
+
+        <button ng-click="update(userAddress)" ng-disabled="myForm.$invalid">Update</button>
+        <button ng-click="cancel(userAddress)" ng-hide="myForm.$invalid">Cancel</button>
+
+    </form>
+
+    <script src="http://code.angularjs.org/angular-1.2.0-8336b3a/angular.min.js"></script>
+    <script src="js/controllers.js"></script>
+
+</body>
+</html>

@@ -1,20 +1,23 @@
 ﻿<!doctype html>
 <html ng-app>
 <head>
-    <script src="http://code.angularjs.org/angular-1.2.0-8336b3a/angular.min.js"></script>
+    <title>Starting Angular</title>
 </head>
 <body>
     <form name="myForm">
-        Mail hard copy?
+        Was that your card?
         <input type="checkbox" ng-model="checked"><br />
-        Select Mail Service:
+        How amazed are you?
         <select id="transferTo" ng-disabled="!checked" ng-model="mailService">
-            <option>UPS</option>
-            <option>Fedex</option>
+            <option>very amazed</option>
+            <option>kinda amazed</option>
         </select>
         <br />
         <!-- Only show if checkbox is checked and mailService is selected -->
-        <div ng-show="checked && mailService">Thank you for choosing {{mailService}}.</div>
+        <div ng-show="checked && mailService">We are glad you were {{mailService}} with the show.</div>
     </form>
+
+    <script src="http://code.angularjs.org/angular-1.2.0-8336b3a/angular.min.js"></script>
+
 </body>
 </html>
