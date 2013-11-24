@@ -76,6 +76,7 @@
     </div>
 
     <!-- js at end to improve performance -->
+
     <!--angular-->
     <script src="http://code.angularjs.org/angular-1.2.0-8336b3a/angular.min.js"></script>
     <script src="http://code.angularjs.org/angular-1.2.0-8336b3a/angular-route.min.js"></script>
@@ -85,22 +86,22 @@
     <script>
         if (!window.angular) {
             var tag;
-            tag = '<script src="{path}"><\/script>';
-            document.write(tag.replace('{path}', 'js/angular.min.js'));
-            document.write(tag.replace('{path}', 'js/angular-route.min.js'));
-            document.write(tag.replace('{path}', 'js/angular-sanitize.min.js'));
+            tag = '<script src="js/angular/{filename}"><\/script>';
+            document.write(tag.replace('{filename}', 'angular.min.js'));
+            document.write(tag.replace('{filename}', 'angular-route.min.js'));
+            document.write(tag.replace('{filename}', 'angular-sanitize.min.js'));
         }
     </script>
 
     <!--angular bootstrap 3-->
-    <script src="js/ui-bootstrap-3/tabs.js"></script>
-    <script src="js/ui-bootstrap-3/dropdownToggle.js"></script>
+    <script src="js/angular-ui-bootstrap-3/dropdownToggle.js"></script>
+    <script src="js/angular-ui-bootstrap-3/tabs.js"></script>
 
     <!--site-->
-    <script src="js/controllers.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/directives.js"></script>
-    <script src="js/services.js"></script>
+    <script src="js/site/controllers.js"></script>
+    <script src="js/site/app.js"></script>
+    <script src="js/site/directives.js"></script>
+    <script src="js/site/services.js"></script>
 
 </body>
 </html>

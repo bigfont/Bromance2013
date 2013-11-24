@@ -1,0 +1,89 @@
+﻿<!doctype html>
+<html ng-app='cardApp'>
+<head>
+    <title>Starting Angular</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+
+    <style type="text/css">
+        .css-form input.ng-invalid.ng-dirty {
+            background-color: #FA787E;
+        }
+
+        .css-form input.ng-valid.ng-dirty {
+            background-color: #78FA89;
+        }
+
+        span.invalidText {
+            color: #ff0000;
+        }
+    </style>
+
+    <!--angular bootstrap 3.0 templates-->
+    <script id="template/tabs/tab.html" type="text/ng-template">
+
+        <li ng-class="{active: active, disabled: disabled}">
+            <a ng-click="select()" tab-heading-transclude>{{heading}}</a>
+        </li>
+
+    </script>
+    <script id="template/tabs/tabset.html" type="text/ng-template">
+
+        <div class="tabbable" ng-class="{'tabs-right': direction == 'right', 'tabs-left': direction == 'left', 'tabs-below': direction == 'below'}">
+            <div tabset-titles="tabsAbove"></div>
+            <div class="tab-content">
+                <div class="tab-pane"
+                     ng-repeat="tab in tabs"
+                     ng-class="{active: tab.active}"
+                     tab-content-transclude="tab">
+                </div>
+            </div>
+            <div tabset-titles="!tabsAbove"></div>
+        </div>
+
+    </script>
+    <script id="template/tabs/tabset-titles.html" type="text/ng-template">
+
+        <ul class="nav {{type && 'nav-' + type}}" ng-class="{'nav-stacked': vertical, 'nav-justified': justified}"></ul>
+
+    </script>
+
+</head>
+<!-- Notice here that ng-app references our 'cardApp' module -->
+<body>
+
+    <div class="container">
+
+        <!-- Reference the application level controller for the title model. -->
+        <div ng-controller="AppCtrl" ng-model="title">
+
+            <h1>{{title}}</h1>
+
+            <div ng-controller="TabsCtrl">
+                <tabset>
+                    <tab heading="Card List" select="changeLocationPathToTargetView('home')">
+                        <section ng-view></section>
+                    </tab>
+                    <tab heading="Add Card" select="changeLocationPathToTargetView('add')">
+                        <section ng-view></section>
+                    </tab>
+                </tabset>
+            </div>
+
+        </div>
+    </div>
+    <!--angular-->
+    <script src="http://code.angularjs.org/angular-1.2.0-8336b3a/angular.min.js"></script>
+    <script src="http://code.angularjs.org/angular-1.2.0-8336b3a/angular-route.min.js"></script>
+
+    <!--angular ui bootstrap 3-->
+    <script src="js/dropdownToggle.js"></script>
+    <script src="js/tabs.js"></script>
+
+    <!--site-->
+    <script src="js/controllers.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/service.js"></script>
+</body>
+</html>

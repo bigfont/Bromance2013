@@ -1,0 +1,26 @@
+﻿Sort by:
+<select ng-model="orderProp">
+    <option value="suit">Suit</option>
+    <option value="numOrd">Number</option>
+</select>
+Number search: <input type="text" ng-model="searchTerm.card.number">
+Suit search: <input type="text" ng-model="searchTerm.card.suit"><br />
+<table class="table">
+    <tr><th><th><th>Number</th><th>Suit</th></tr>
+    <tr ng-repeat="card in cards | orderBy:orderProp |  filter:searchTerm.card ">
+        <td>
+            <div class="dropdown">
+                <a class="dropdown-toggle btn btn-default">Options</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#/home/number/{{card.number}}/suit/{{card.suit}}">View</a></li>
+                    <li><a href="#/delete/number/{{card.number}}/suit/{{card.suit}}">Delete</a></li>
+                </ul>
+            </div>
+        </td>
+        <td></td>
+
+        <td>{{card.number}}</td>
+        <td>{{card.suit}}</td>
+    </tr>
+</table>
+<br />
